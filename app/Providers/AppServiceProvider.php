@@ -22,9 +22,9 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-     if ($this->app->environment() == 'production') {
-     URL::forceSchema('https');
-     }
+    //  if ($this->app->environment() == 'production') {
+    //     URL::forceSchema('https');
+    //  }
     public function register()
     {
       // Force SSL in production
