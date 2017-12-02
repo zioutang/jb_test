@@ -12,16 +12,16 @@ use Illuminate\Support\Facades\Auth;
 
 class TicketsController extends Controller
 {
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
 
 	public function create()
 	{
 		$categories = Category::all();
 
 			return view('tickets.create', compact('categories'));
-	}
-	public function __construct()
-	{
-		$this->middleware('auth');
 	}
 	public function store(Request $request, AppMailer $mailer)
 	{
