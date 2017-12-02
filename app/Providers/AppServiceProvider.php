@@ -14,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Schema::defaultStringLength(191);
+        // Schema::defaultStringLength(191);
     }
 
     /**
@@ -25,9 +25,9 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
       // Force SSL in production
-      if ($this->app->environment() == 'production') {
-      URL::forceScheme('https');
-      }
+      // if ($this->app->environment() == 'production') {
+      // URL::forceScheme('https');
+      // }
     }
 
 }
