@@ -19,6 +19,10 @@ class TicketsController extends Controller
 
 			return view('tickets.create', compact('categories'));
 	}
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
 	public function store(Request $request, AppMailer $mailer)
 	{
 			$this->validate($request, [
@@ -88,8 +92,5 @@ class TicketsController extends Controller
 
         return redirect()->back()->with("status", "The ticket has been closed.");
     }
-		public function __construct()
-		{
-			$this->middleware('auth');
-		}
+
 }
